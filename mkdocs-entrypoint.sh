@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 
 isCommand() {
-  # Retain backwards compatibility with common CI providers,
-  # see: https://github.com/composer/docker/issues/107
-  if [ "$1" = "sh" ]; then
-    return 1
-  fi
-
-  mkdocs help "$1" > /dev/null 2>&1
+  case "$1" in
+    build|gh-deploy|new|serve) return 0 ;;
+    *) return 1 ;;
+  esac
 }
 
 # check if the first argument passed in looks like a flag

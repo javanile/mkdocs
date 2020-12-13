@@ -12,5 +12,11 @@ push: build
 test-help: build
 	@docker run --rm -v $${PWD}:/app javanile/mkdocs --help
 
-test-sample: build
-	@docker run --rm -v $${PWD}:/app -u $$(id -u) javanile/mkdocs -f test/phpdox.xml
+test-help-build: build
+	@docker run --rm -v $${PWD}:/app javanile/mkdocs --help build
+
+test-ls: build
+	@docker run --rm -v $${PWD}:/app javanile/mkdocs ls
+
+test-build: build
+	@docker run --rm -v $${PWD}:/app -u $$(id -u) javanile/mkdocs build --strict --verbose
