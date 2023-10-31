@@ -22,4 +22,4 @@ test-sh: build
 	@docker run --rm -it -v $${PWD}:/app javanile/mkdocs sh
 
 test-build: build
-	@docker run --rm -v $${PWD}:/app -u $$(id -u) javanile/mkdocs build --strict --verbose
+	@docker run --rm -v $${PWD}/test/fixtures:/app -u $$(id -u) javanile/mkdocs build --strict --verbose
