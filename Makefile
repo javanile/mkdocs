@@ -16,7 +16,10 @@ test-help-build: build
 	@docker run --rm -v $${PWD}:/app javanile/mkdocs --help build
 
 test-ls: build
-	@docker run --rm -v $${PWD}:/app javanile/mkdocs ls
+	@docker run --rm -v $${PWD}:/app javanile/mkdocs ls -la
+
+test-sh: build
+	@docker run --rm -it -v $${PWD}:/app javanile/mkdocs sh
 
 test-build: build
 	@docker run --rm -v $${PWD}:/app -u $$(id -u) javanile/mkdocs build --strict --verbose
