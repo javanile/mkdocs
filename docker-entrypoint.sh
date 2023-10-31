@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 isCommand() {
   case "$1" in
@@ -9,13 +9,13 @@ isCommand() {
 
 # check if the first argument passed in looks like a flag
 if [ "${1#-}" != "$1" ]; then
-  set -- /usr/bin/tini -- mkdocs "$@"
+  set -- mkdocs "$@"
 # check if the first argument passed in is composer
 elif [ "$1" = 'mkdocs' ]; then
-  set -- /usr/bin/tini -- "$@"
+  set -- "$@"
 # check if the first argument passed in matches a known command
 elif isCommand "$1"; then
-  set -- /usr/bin/tini -- mkdocs "$@"
+  set -- mkdocs "$@"
 fi
 
 exec "$@"

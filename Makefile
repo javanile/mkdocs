@@ -1,6 +1,6 @@
 
 build:
-	chmod +x mkdocs-entrypoint.sh
+	chmod +x docker-entrypoint.sh
 	docker build -t javanile/mkdocs .
 
 push: build
