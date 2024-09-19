@@ -7,6 +7,7 @@ push: build
 	git add .
 	git commit -am "publish" || true
 	git push
+	docker login -u yafb
 	docker push javanile/mkdocs
 
 test-help: build

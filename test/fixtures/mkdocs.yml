@@ -1,9 +1,6 @@
 site_name: Sample
 site_url: http://sample.com
 site_dir: public
+
 theme:
   name: readthedocs
-
-nav:
-  - Coverage report: coverage-iframe.md
-
