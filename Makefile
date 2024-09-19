@@ -9,6 +9,7 @@ push: build
 	git push
 	docker login -u yafb
 	docker push javanile/mkdocs
+	docker push javanile/mkdocs:2024
 
 test-help: build
 	@docker run --rm -v $${PWD}:/app javanile/mkdocs --help
