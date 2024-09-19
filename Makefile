@@ -2,6 +2,7 @@
 build:
 	chmod +x docker-entrypoint.sh
 	docker build -t javanile/mkdocs .
+	docker build -t javanile/mkdocs:2024 .
 
 push: build
 	git add .
